@@ -1,0 +1,41 @@
+:root {
+    --header: rgb(98, 98, 223);
+    --content: white;
+    --sidebar: rgb(224, 232, 255);
+    --textWhite: white;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    display: grid;
+    font-family: 'Abel-Regular';
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr 4fr;
+}
+
+@font-face {
+    font-family: 'Abel-Regular';
+    src: url('fonts/Abel-Regular.ttf');
+}
+
+
+.header {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    background-color: var(--header);
+    color: var(--textWhite);
+    
+}
+
+.sidebar {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    background-color: var(--sidebar);
+}
+
+.content {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    background-color: var(--content);    
+}    
