@@ -12,18 +12,30 @@
        <div class="logoBox">
          <img src="icons/text-box-edit-outline.svg" class="logo">
          <h1>To-Do</h1>  
+         <img src="icons/plus-circle-outline.svg" class="addNew" onclick="showInputField()">
        </div> 
    </div>
    <div class="sidebar">
-      <h1>Home</h1> 
-      <h1>Today</h1>
-      <h1>Upcoming</h1>
-      <h1>Projects</h1> 
-      <div class="blank"></div>
+      <div class="sidebarBox">
+        <h2>Home</h2> 
+        <h2>Today</h2>
+        <h2>Upcoming</h2>
+        <h2>Projects</h2> 
+      </div>
    </div>
    <div class="content">
       <h1>To-do lists will display here dynamically.</h1>
+     
    </div>
-   
+   <div class="inputField" id="inputField">
+      <div class="titleAndNotes">
+         <input type="text" id="title" placeholder="Title">
+         <div class="divider"></div>
+         <input type="text" id="notes" placeholder="Notes">
+      </div>
+      <div class="details">
+      </div>
+   </div>
+   <script src="script.js"></script>
 </body>
 </html>

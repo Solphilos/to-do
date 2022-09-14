@@ -2,7 +2,8 @@
     --header: rgb(98, 98, 223);
     --content: white;
     --sidebar: rgb(224, 232, 255);
-    --textWhite: white;
+    --textWhite: rgb(255, 255, 255);
+    --textDark: rgb(66, 66, 68);
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     display: grid;
     font-family: 'Abel-Regular';
     grid-template-columns: 1fr 6fr;
-    grid-template-rows: 10% 719px;
+    grid-template-rows: 6% 722px;
 }
 
 @font-face {
@@ -28,23 +29,43 @@ body {
     color: var(--textWhite);
 }
 
+.header h1 {
+    margin: 0;
+    
+}
+
 .logo {
-    height: 40%;
-    width: 40%;
+    height: 60%;
+    width: 28%;
 }
 
 .logoBox {
     height: 100%;
-    width: 10%;
+    width: 11%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin-left: 2%;
+}
+
+.addNew {
+    height: 80%;
+    position: relative;
+    left: 700%;
 }
 
 .sidebar {
     grid-column: 1;
     grid-row: 2 / span 2;
     background-color: var(--sidebar);
+    color: var(--textDark);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebarBox {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
 }
 
 
@@ -53,3 +74,44 @@ body {
     grid-row: 2 / span 2;
     background-color: var(--content);    
 }    
+
+#inputField {
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60%;
+    width: 500px;
+    border: solid red 1px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+}
+
+.titleAndNotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 90%;
+    border: solid grey 1px;
+}
+
+
+#title, #notes {
+    height: 40%;
+    width: 90%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: grey;
+}
