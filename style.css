@@ -70,10 +70,23 @@ body {
 
 
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: 2;
     grid-row: 2 / span 2;
     background-color: var(--content);    
-}    
+}  
+
+.toDo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10%;
+    width: 80%;
+    border-top: solid grey 1px;
+    border-bottom: solid grey 1px;
+}
 
 #inputField {
     display: none;
@@ -82,7 +95,7 @@ body {
     align-items: center;
     height: 60%;
     width: 500px;
-    border: solid red 1px;
+    border: solid grey 1px;
     position: fixed;
     left: 50%;
     top: 50%;
@@ -99,6 +112,8 @@ body {
     height: 40%;
     width: 90%;
     border: solid grey 1px;
+    border-radius: 10px;
+    margin: 10px;
 }
 
 
@@ -112,6 +127,10 @@ body {
 
 .divider {
     height: 1px;
-    width: 100%;
+    width: 90%;
     background-color: grey;
+}
+
+.submit {
+    
 }
