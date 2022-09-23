@@ -29,16 +29,18 @@
      
    </div>
    <div class="inputField" id="inputField">
+      <form method="get" name="thisForm">
       <div class="titleAndNotes">
-      
-         <input type="text" id="title" placeholder="Title">
+         <label for="title"></label>
+         <input type="text" id="title" name="title" placeholder="Title" required>
          <div class="divider"></div>
-         <input type="text" id="notes" placeholder="Notes">
+         <label for="notes"></label>
+         <input type="text" id="notes" name="notes" placeholder="Notes">
       </div>
       <div class="details">
       </div>
-      <button class="submit" onclick="submitList()">Add</button>
-   
+      <button type="submit" class="submit">Add</button>
+   </form>
    </div>
    <script src="script.js"></script>
 </body>

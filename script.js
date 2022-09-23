@@ -8,6 +8,12 @@ hideInputField = () => {
     document.getElementById('inputField').style.display = "none";
 }
 
+resetFields = () => {
+    document.getElementById('title').value = '';
+    document.getElementById('notes').value; '';
+   
+}
+
 
 
 
@@ -52,11 +58,28 @@ makeToDo = () => {
 
 
 submitList = () => {
-    hideInputField();
-    getListProperties();
+    validateForm();
+   // hideInputField();
+   // getListProperties();
     //makeNewObj();
-    makeToDo();
+   // makeToDo();
+   // resetFields();
 }
 
+document.querySelector('.submit').addEventListener('click', submitList);
+
+
+validateForm = () => {
+    let form = document.forms['thisForm']['title'].value;
+    if (form == '') {
+        return false;
+    }
+    else {
+        hideInputField();
+        getListProperties();
+        makeToDo();
+        resetFields();
+    }
+}
 
 
