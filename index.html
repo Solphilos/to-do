@@ -17,30 +17,36 @@
    </div>
    <div class="sidebar">
       <div class="sidebarBox">
-        <h2>Home</h2> 
-        <h2>Today</h2>
-        <h2>Scheduled</h2>
-        <h2>All</h2>
-        <h2>Projects</h2> 
+        <button class="home">Home</button> 
+        <button class="today">Today</button>
+        <button class="scheduled">Scheduled</button>
+        <button class="all">All</button>
+        <button class="projects">Projects</button> 
       </div>
    </div>
    <div class="content">
       <h1></h1>
+      <div id="home">Today: Scheduled: All:</div>
+      <div id="today">This is today page</div>
+      <div id="scheduled">This is scheduled page</div>
+      <div id="all"></div>
+      <div id="projects">This is projects page</div>
      
    </div>
    <div class="inputField" id="inputField">
       <form method="get" name="thisForm">
-      <div class="titleAndNotes">
-         <label for="title"></label>
-         <input type="text" id="title" name="title" placeholder="Title" required>
-         <div class="divider"></div>
-         <label for="notes"></label>
-         <input type="text" id="notes" name="notes" placeholder="Notes">
-      </div>
-      <div class="details">
-      </div>
-      <button type="submit" class="submit">Add</button>
-   </form>
+         <div class="titleAndNotes">
+          <label for="title"></label>
+            <input type="text" id="title" name="title" placeholder="Title" required>
+          <div class="divider"></div>
+          <label for="notes"></label>
+          <input type="text" id="notes" name="notes" placeholder="Notes">
+         </div>
+         <div class="details">
+         </div>
+         <button type="submit" class="submit">Add</button>
+      </form>
+      <button id="cancel">Cancel</button>
    </div>
    <script src="script.js"></script>
 </body>

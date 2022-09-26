@@ -14,7 +14,74 @@ resetFields = () => {
    
 }
 
+cancelButton = (() => {
+    document.getElementById('cancel').addEventListener('click', hideInputField);
+})();
+ 
 
+/// DOM tab navigation ////////////////////////
+
+
+tabNav = (() => {    
+
+    const allTab = document.getElementById('all');
+    const homeTab = document.getElementById('home');
+    const todayTab = document.getElementById('today');
+    const scheduledTab = document.getElementById('scheduled'); 
+    const projectsTab = document.getElementById('projects');
+
+
+    goAllPage = () => {
+        allTab.style.display = 'flex';
+        homeTab.style.display = 'none';
+        todayTab.style.display = 'none';
+        scheduledTab.style.display = 'none';
+        projectsTab.style.display = 'none';
+    }
+
+    goHomePage = () => {
+        allTab.style.display = 'none';
+        homeTab.style.display = 'flex';
+        todayTab.style.display = 'none';
+        scheduledTab.style.display = 'none';
+        projectsTab.style.display = 'none'; 
+    }
+
+    goTodayPage = () => {
+        allTab.style.display = 'none';
+        homeTab.style.display = 'none';
+        todayTab.style.display = 'flex';
+        scheduledTab.style.display = 'none';
+        projectsTab.style.display = 'none';
+    }
+
+    goScheduledPage = () => {
+        allTab.style.display = 'none';
+        homeTab.style.display = 'none';
+        todayTab.style.display = 'none';
+        scheduledTab.style.display = 'flex';
+        projectsTab.style.display = 'none'; 
+    }
+
+    goProjectsPage = () => {
+        allTab.style.display = 'none';
+        homeTab.style.display = 'none';
+        todayTab.style.display = 'none';
+        scheduledTab.style.display = 'none';
+        projectsTab.style.display = 'flex';
+    }
+     
+    document.querySelector('.all').addEventListener('click', goAllPage);
+
+    document.querySelector('.home').addEventListener('click', goHomePage);
+
+    document.querySelector('.today').addEventListener('click', goTodayPage);
+
+    document.querySelector('.scheduled').addEventListener('click', goScheduledPage);
+
+    document.querySelector('.projects').addEventListener('click', goProjectsPage);
+
+})();
 
 
 /// logic for creating new list //////////////
@@ -41,10 +108,10 @@ getListProperties = () => {
 
 makeToDo = () => {
     const newObj = listFactory(title, notes);
-    const content = document.querySelector('.content');
+    const all = document.getElementById('all');
     const toDo = document.createElement('div');
     toDo.classList.add('toDo');
-    content.appendChild(toDo);
+    all.appendChild(toDo);
     toDo.innerHTML = newObj.title;
     const deleteButton = document.createElement('button');
     deleteButton.classList.add('delete');
@@ -54,20 +121,6 @@ makeToDo = () => {
         toDo.remove()
     })
 }
-
-
-
-submitList = () => {
-    validateForm();
-   // hideInputField();
-   // getListProperties();
-    //makeNewObj();
-   // makeToDo();
-   // resetFields();
-}
-
-document.querySelector('.submit').addEventListener('click', submitList);
-
 
 validateForm = () => {
     let form = document.forms['thisForm']['title'].value;
@@ -79,7 +132,19 @@ validateForm = () => {
         getListProperties();
         makeToDo();
         resetFields();
+        goAllPage();
     }
 }
+
+
+
+
+submitList = () => {
+    validateForm();
+}
+
+document.querySelector('.submit').addEventListener('click', submitList);
+
+
 
 
