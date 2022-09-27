@@ -66,17 +66,19 @@ body {
 .sidebarBox {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    
     
 }
 
 .home, .today, .scheduled, .all, .projects {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 500;
     background-color: transparent;
     border: none;
     padding-left: 20%;
-    padding-top: 10%;
-    padding-bottom: 10%;
+    padding-top: 7%;
+    padding-bottom: 7%;
 }
 
 .home:hover, .today:hover, .scheduled:hover, .all:hover, .projects:hover {
@@ -112,9 +114,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  
     height: 10%;
     width: 80%;
-    border-top: solid grey 1px;
     border-bottom: solid grey 1px;
 }
 

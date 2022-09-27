@@ -110,12 +110,26 @@ makeToDo = () => {
     const newObj = listFactory(title, notes);
     const all = document.getElementById('all');
     const toDo = document.createElement('div');
-    toDo.classList.add('toDo');
-    all.appendChild(toDo);
-    toDo.innerHTML = newObj.title;
+    const subBox = document.createElement('div');
+    const radioButton = document.createElement('INPUT');
     const deleteButton = document.createElement('button');
+    subBox.classList.add('subBox');
+    all.appendChild(toDo);
+    toDo.appendChild(radioButton);
+    toDo.appendChild(subBox);
+    toDo.classList.add('toDo');
+    radioButton.setAttribute('type', 'radio');
     deleteButton.classList.add('delete');
-    toDo.appendChild(deleteButton);
+    subBox.innerHTML = newObj.title;
+    subBox.appendChild(deleteButton);
+    
+    subBox.style.width = "95%";
+    subBox.style.display = "flex";
+    subBox.style.justifyContent = "space-between"
+    
+    
+    
+   
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener('click', function() {
         toDo.remove()
