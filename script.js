@@ -122,7 +122,7 @@ makeToDo = () => {
     deleteButton.classList.add('delete');
     subBox.innerHTML = newObj.title;
     subBox.appendChild(deleteButton);
-    
+    subBox.style.color = "#E7DFDD"
     subBox.style.width = "95%";
     subBox.style.display = "flex";
     subBox.style.justifyContent = "space-between"
