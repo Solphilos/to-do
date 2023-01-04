@@ -1,5 +1,6 @@
 /// add new list module ////////////////////
 
+
 showInputField = () => {
     document.getElementById('inputField').style.display = "flex";
 }
@@ -25,7 +26,6 @@ cancelButton = (() => {
 tabNav = (() => {    
 
     const allTab = document.getElementById('all');
-    const homeTab = document.getElementById('home');
     const todayTab = document.getElementById('today');
     const scheduledTab = document.getElementById('scheduled'); 
     const projectsTab = document.getElementById('projects');
@@ -33,23 +33,15 @@ tabNav = (() => {
 
     goAllPage = () => {
         allTab.style.display = 'flex';
-        homeTab.style.display = 'none';
         todayTab.style.display = 'none';
         scheduledTab.style.display = 'none';
         projectsTab.style.display = 'none';
     }
 
-    goHomePage = () => {
-        allTab.style.display = 'none';
-        homeTab.style.display = 'flex';
-        todayTab.style.display = 'none';
-        scheduledTab.style.display = 'none';
-        projectsTab.style.display = 'none'; 
-    }
+    
 
     goTodayPage = () => {
         allTab.style.display = 'none';
-        homeTab.style.display = 'none';
         todayTab.style.display = 'flex';
         scheduledTab.style.display = 'none';
         projectsTab.style.display = 'none';
@@ -57,7 +49,6 @@ tabNav = (() => {
 
     goScheduledPage = () => {
         allTab.style.display = 'none';
-        homeTab.style.display = 'none';
         todayTab.style.display = 'none';
         scheduledTab.style.display = 'flex';
         projectsTab.style.display = 'none'; 
@@ -65,15 +56,12 @@ tabNav = (() => {
 
     goProjectsPage = () => {
         allTab.style.display = 'none';
-        homeTab.style.display = 'none';
         todayTab.style.display = 'none';
         scheduledTab.style.display = 'none';
         projectsTab.style.display = 'flex';
     }
      
     document.querySelector('.all').addEventListener('click', goAllPage);
-
-    document.querySelector('.home').addEventListener('click', goHomePage);
 
     document.querySelector('.today').addEventListener('click', goTodayPage);
 
@@ -122,19 +110,25 @@ makeToDo = () => {
     deleteButton.classList.add('delete');
     subBox.innerHTML = newObj.title;
     subBox.appendChild(deleteButton);
-    subBox.style.color = "#E7DFDD"
+    subBox.style.color = "black"
     subBox.style.width = "95%";
     subBox.style.display = "flex";
     subBox.style.justifyContent = "space-between"
-    
-    
-    
-   
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener('click', function() {
         toDo.remove()
     })
 }
+
+addProject = () => {
+    const projDiv = document.getElementById('projects');
+    
+}
+
+document.getElementById('title').addEventListener('keydown', function() {
+    document.querySelector('.submit').style.color = "#81383C";
+})
+
 
 validateForm = () => {
     let form = document.forms['thisForm']['title'].value;
@@ -149,7 +143,6 @@ validateForm = () => {
         goAllPage();
     }
 }
-
 
 
 

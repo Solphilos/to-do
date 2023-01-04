@@ -1,19 +1,21 @@
 :root {
-    --header: rgb(98, 98, 223);
-    --content: white;
-    --sidebar: rgb(224, 232, 255);
-    --textWhite: rgb(255, 255, 255);
+    --light-green: #38817d;
+    --content: #222222;
+    --dark-green: #47A59F;
+    --textWhite: #E7DFDD;
     --textDark: rgb(66, 66, 68);
-    --lightBlue: rgb(140, 140, 255);
-}
+    --grey: rgb(205, 206, 207);
+    --maroon: #81383C;
+    --purple: #583881;
+}  
 
 body {
     height: 100%;
     margin: 0;
-    display: grid;
+    display: flex;
     font-family: 'Abel-Regular';
-    grid-template-columns: 1fr 6fr;
-    grid-template-rows: 6% 722px;
+    display: flex;
+    
 }
 
 @font-face {
@@ -22,53 +24,30 @@ body {
 }
 
 
-.header {
-    grid-column: 1 / span 2;
-    grid-row: 1;
-    display: flex;
-    background-color: var(--header);
-    color: var(--textWhite);
-}
-
-.header h1 {
-    margin: 0;
-    
-}
-
-.logo {
-    height: 60%;
-    width: 28%;
-}
-
-.logoBox {
-    height: 100%;
-    width: 11%;
-    display: flex;
-    align-items: center;
-    margin-left: 2%;
-}
-
 .addNew {
-    height: 80%;
-    position: relative;
-    left: 700%;
+    height: 5%;
+    position: fixed;
+    left: 27%;
+    top: 94%;
 }
+
+
 
 .sidebar {
-    grid-column: 1;
-    grid-row: 2 / span 2;
-    background-color: var(--sidebar);
-    color: var(--textDark);
+    height: 100vh;
+    width: 25%;
+    margin: 0;
+    background-color: var(--light-green);
+    color: var(--textWhite);
     display: flex;
     flex-direction: column;
+    
 }
 
 .sidebarBox {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    
-    
 }
 
 .home, .today, .scheduled, .all, .projects {
@@ -79,33 +58,42 @@ body {
     padding-left: 20%;
     padding-top: 7%;
     padding-bottom: 7%;
+    color: var(--textWhite);
+   
 }
 
 .home:hover, .today:hover, .scheduled:hover, .all:hover, .projects:hover {
-    background-color: var(--lightBlue);
+    color: white;
+    
+    background-color: var(--dark-green);
+   
 }
 
 
 .content {
+    height: 100vh;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-column: 2;
-    grid-row: 2 / span 2;
-    background-color: var(--content);    
+    background-color: white;   
 }  
 
-#home, #today, #scheduled, #all, #projects {
+#today, #scheduled, #all, #projects {
     height: 100%;
     width: 90%;
     display: none;
     flex-direction: column;
     align-items: center;
-   
 }
 
 #home {
     display: flex;
+}
+
+#today, #scheduled, #projects {
+    font-size: 24px;
+    
 }
 
 
@@ -128,7 +116,8 @@ body {
     height: 60%;
     width: 500px;
     border: solid grey 1px;
-    background-color: white;
+    border-radius: 2%;
+    
     position: fixed;
     left: 50%;
     top: 50%;
@@ -143,18 +132,56 @@ body {
     align-items: center;
 }
 
+.buttonBox {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2%;
+}
+
+.buttonBox h1 {
+    color: var(--textDark);
+}
+
 .titleAndNotes {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40%;
+    background-color: white;
+    height: 30%;
     width: 90%;
     border: solid grey 1px;
     border-radius: 10px;
     margin: 10px;
 }
 
+.dateAndTime {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 30%;
+    width: 90%;
+    border: solid grey 1px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.date, .time {
+    height: 90%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+}
+
+#date, #time {
+    
+}
 
 #title, #notes {
     height: 40%;
@@ -162,6 +189,8 @@ body {
     border: none;
     outline: none;
     font-size: 20px;
+    background-color: white;
+    color: var(--content);
 }
 
 .divider {
@@ -170,6 +199,15 @@ body {
     background-color: grey;
 }
 
-.submit {
-    
+.submit, #cancel {
+    background-color: transparent;
+    border: none;
+    color: var(--light-green);
+    font-size: 1em;
+    font-weight: bold;
 }
+
+.submit {
+    color: grey;
+}
+
