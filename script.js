@@ -91,8 +91,14 @@ makeNewObj = () => {
 getListProperties = () => {
    title = document.getElementById('title').value;
    notes = document.getElementById('notes').value;
-   
 }
+
+const newNote = () => {
+    const subBox = document.querySelector('.subBox');
+    subBox.style.display = "none";
+}
+
+
 
 makeToDo = () => {
     const newObj = listFactory(title, notes);
@@ -101,6 +107,7 @@ makeToDo = () => {
     const subBox = document.createElement('div');
     const radioButton = document.createElement('INPUT');
     const deleteButton = document.createElement('button');
+    const openButton = document.createElement('button');
     subBox.classList.add('subBox');
     all.appendChild(toDo);
     toDo.appendChild(radioButton);
@@ -108,21 +115,42 @@ makeToDo = () => {
     toDo.classList.add('toDo');
     radioButton.setAttribute('type', 'radio');
     deleteButton.classList.add('delete');
+    openButton.classList.add('open');
     subBox.innerHTML = newObj.title;
     subBox.appendChild(deleteButton);
+    subBox.appendChild(openButton);
     subBox.style.color = "black"
     subBox.style.width = "95%";
     subBox.style.display = "flex";
     subBox.style.justifyContent = "space-between"
     deleteButton.textContent = "Delete";
+    openButton.textContent = "Open";
     deleteButton.addEventListener('click', function() {
         toDo.remove()
+    });
+    openButton.addEventListener('click', function(){
+        subBox.style.display = "none";
+        toDo.style.display = "none";
+        const notesPage = document.createElement('div');
+        const backButton = document.createElement('button');
+        all.appendChild(notesPage);
+        all.appendChild(backButton);
+        notesPage.textContent = "notes go here";
+        backButton.textContent = "Back";
+        backButton.addEventListener('click', function() {
+            subBox.style.display = "flex";
+            toDo.style.display = "flex";
+            notesPage.style.display = "none";
+            backButton.style.display = "none";
+        });
+
     })
+   
+    
 }
 
 addProject = () => {
     const projDiv = document.getElementById('projects');
-    
 }
 
 document.getElementById('title').addEventListener('keydown', function() {
@@ -141,6 +169,7 @@ validateForm = () => {
         makeToDo();
         resetFields();
         goAllPage();
+        
     }
 }
 
